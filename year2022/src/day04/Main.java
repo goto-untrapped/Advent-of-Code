@@ -34,8 +34,8 @@ public class Main {
     private static long solution1(List<List<Integer>> list) {
         return list.stream()
                 .filter(elem -> (elem.get(0) <= elem.get(2) && elem.get(3) <= elem.get(1))
-                        ||
-                        (elem.get(2) <= elem.get(0) && elem.get(1) <= elem.get(3)))
+                                ||
+                                (elem.get(2) <= elem.get(0) && elem.get(1) <= elem.get(3)))
                 .count();
     }
 
