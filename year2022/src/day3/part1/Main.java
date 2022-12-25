@@ -1,5 +1,7 @@
 package day3.part1;
 
+import day3.Rucksack;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -8,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Main {
-    private static final String PATH = "year2022/src/day3/input.txt";
+    private static final String PATH = "year2022/src/day3/part1/input.txt";
 
     public static void main(String[] args) throws IOException {
         Path inputPath = Paths.get(PATH);
@@ -17,7 +19,10 @@ public class Main {
         int total = 0;
         for (String items : inputItems) {
             Rucksack rucksack = new Rucksack(items);
-            total += rucksack.getPrioritizedScore();
+            String firstCompartment = rucksack.getFirstCompartment();
+            String lastCompartment = rucksack.getLastCompartment();
+            String itemDuplication = rucksack.getDuplication(firstCompartment, lastCompartment);
+            total += rucksack.getPrioritizedScore(itemDuplication);
         }
 
         System.out.println(total);

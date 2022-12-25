@@ -1,4 +1,4 @@
-package day3.part1;
+package day3;
 
 public class Prioritize {
     private static final int OFFSET_LOWER_CASE = -96;
